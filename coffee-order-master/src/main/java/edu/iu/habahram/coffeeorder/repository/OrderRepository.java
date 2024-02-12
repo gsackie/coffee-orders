@@ -11,6 +11,11 @@ public class OrderRepository {
             case "dark roast":
                 beverage = new DarkRoast();
                 break;
+            case "HouseBlend":
+                beverage = new HouseBlend();
+                break;
+                case"Expresso":
+                beverage = new Expresso();
         }
         if (beverage == null) {
             throw new Exception("Beverage type '%s' is not valid!".formatted(order.beverage()));
@@ -23,6 +28,15 @@ public class OrderRepository {
                 case "mocha":
                     beverage = new Mocha(beverage);
                     break;
+
+                case "Soy":
+                    beverage = new Soy(beverage);
+                    break;
+
+                case "whip":
+                    beverage = new Whip(beverage);
+                    break;
+
                 default:
                     throw new Exception("Condiment type '%s' is not valid".formatted(condiment));
             }
